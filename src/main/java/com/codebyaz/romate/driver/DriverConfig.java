@@ -42,8 +42,7 @@ public class DriverConfig {
 
     @Bean
     @Scope("prototype")
-    public WebDriver driver() {
-        ChromeOptions options = options();
+    public WebDriver driver(ChromeOptions options) {
         return new ChromeDriver(options);
     }
 }

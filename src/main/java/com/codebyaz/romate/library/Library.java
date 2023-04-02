@@ -2,25 +2,22 @@ package com.codebyaz.romate.library;
 
 import com.codebyaz.romate.action.Action;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
 @Entity
+@Data
 public class Library {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String name;
-
     private String slug;
-
     private String description;
-
     @Column(name = "is_custom")
     private boolean isCustom;
-
     @ManyToMany
     private List<Action> actions;
 
@@ -44,54 +41,6 @@ public class Library {
         this.slug = slug;
         this.description = description;
         this.isCustom = isCustom;
-        this.actions = actions;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSlug() {
-        return slug;
-    }
-
-    public void setSlug(String slug) {
-        this.slug = slug;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public boolean isCustom() {
-        return isCustom;
-    }
-
-    public void setCustom(boolean custom) {
-        isCustom = custom;
-    }
-
-    public List<Action> getActions() {
-        return actions;
-    }
-
-    public void setActions(List<Action> actions) {
         this.actions = actions;
     }
 }
