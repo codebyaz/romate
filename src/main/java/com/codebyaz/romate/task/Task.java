@@ -2,6 +2,7 @@ package com.codebyaz.romate.task;
 
 import com.codebyaz.romate.instruction.Instruction;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Entity
 @Data
+@AllArgsConstructor
 public class Task {
 
     @Id
@@ -35,16 +37,6 @@ public class Task {
 
     public Task(String name) {
         this.name = name;
-    }
-
-    public Task(Long id, String name, String description, boolean isPrivate, int executionsInParallel, LocalDateTime createdAt, List<Instruction> instructions) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.isPrivate = isPrivate;
-        this.executionsInParallel = executionsInParallel;
-        this.createdAt = createdAt;
-        this.instructions = instructions;
     }
 
     @Override

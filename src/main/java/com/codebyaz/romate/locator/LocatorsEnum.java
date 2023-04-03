@@ -1,23 +1,23 @@
 package com.codebyaz.romate.locator;
 
-public enum LocatorEnum {
+public enum LocatorsEnum {
 
-    ID("id"),
-    NAME("name"),
-    CLASS("className"),
-    CSS_SELECTOR("css"),
-    TAG("tagName"),
-    LINK_TEXT("linkText"),
-    PARTIAL_LINK_TEXT("partialLinkText"),
-    XPATH("xpath");
+    ID(1),
+    NAME(2),
+    CLASS(3),
+    CSS_SELECTOR(4),
+    TAG(5),
+    LINK_TEXT(6),
+    PARTIAL_LINK_TEXT(7),
+    XPATH(8);
 
-    private final String locator;
+    private final Integer locator;
 
-    LocatorEnum(String locator) {
+    LocatorsEnum(Integer locator) {
         this.locator = locator;
     }
 
-    public String get() {
+    public Integer get() {
         return this.locator;
     }
 }

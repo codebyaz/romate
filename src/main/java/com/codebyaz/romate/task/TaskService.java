@@ -14,17 +14,13 @@ public class TaskService {
 
     private final Provider<Bot> botProvider;
 
-    private final InstructionRepository instructionRepository;
-
     public TaskService(
-            Provider<Bot> botProvider,
-            InstructionRepository instructionRepository
+            Provider<Bot> botProvider
     ) {
         this.botProvider = botProvider;
-        this.instructionRepository = instructionRepository;
     }
 
-    @Async
+//    @Async
     public void run(Task task) {
         Bot bot = botProvider.get();
         bot.execute(task);

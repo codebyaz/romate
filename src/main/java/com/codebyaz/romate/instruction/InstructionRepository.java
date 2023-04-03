@@ -7,5 +7,4 @@ import java.util.List;
 
 @Repository
 public interface InstructionRepository extends JpaRepository<Instruction, Long> {
-    List<Instruction> findAllByProcessIdOrderBySequence(Long id);
 }
